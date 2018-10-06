@@ -1,0 +1,25 @@
+<%= will_paginate %>
+
+<table class="table">
+  <thead>
+    <tr><span class="index">
+      <th>Maker</th>
+      <th>Name</th>
+      <th>Price</th>
+    </span></tr>
+  </thead>
+  <% @digitalitems.each do |item| %>
+  <tbody>
+    <tr><span class="index">
+      <td><%= item.maker %></td>
+      <td><%= item.name %></td>
+      <td><%= item.price %></td>
+          <%= link_to 'Show', digitalitem_path(item) %>
+          <%= link_to 'Index', digitalitems_path %>
+      </td>
+    </span></tr>
+  </tbody>
+  <% end %>
+</table>
+
+<%= will_paginate %>
