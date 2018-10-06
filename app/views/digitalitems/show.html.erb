@@ -1,0 +1,9 @@
+<table>
+  <% if File.exist? "#{Rails.root}/app/assets/images/#{@item.code}_s.jpg" %>
+    <tr><td><%= image_tag(@item.code + "_s.jpg") %></td></tr>
+  <% else %>
+    <tr><h6>画像なし</h6></tr>
+  <% end %>
+  <tr><td><%= @item.name %></td></tr>
+  <tr><td><%= "¥" + @item.price.to_s(:delimited) %></td></tr>
+</table>

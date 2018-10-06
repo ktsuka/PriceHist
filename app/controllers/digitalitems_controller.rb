@@ -8,7 +8,8 @@ class DigitalitemsController < ApplicationController
   end
 
   def check
-    @digitalitems=DigitalItem.paginate(page: params[:page], per_page: 40).check(params[:q])
+    @digitalitems=DigitalItem.paginate(page: params[:page], per_page: 40).check(params[:q]).order(:maker)
+
   end
 
 end

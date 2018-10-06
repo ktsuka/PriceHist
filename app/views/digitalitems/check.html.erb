@@ -12,11 +12,8 @@
   <tbody>
     <tr><span class="index">
       <td><%= item.maker %></td>
-      <td><%= item.name %></td>
-      <td><%= item.price %></td>
-          <%= link_to 'Show', digitalitem_path(item) %>
-          <%= link_to 'Index', digitalitems_path %>
-      </td>
+      <td><%= link_to item.name, digitalitem_path(item), :target=>["_blank"] %></td>
+      <td><%= "¥" + item.price.to_s(:delimited) %></td>
     </span></tr>
   </tbody>
   <% end %>
