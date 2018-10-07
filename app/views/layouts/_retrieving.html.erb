@@ -1,6 +1,49 @@
 <%= form_tag(:check_digitalitems, method: "get") do %>
 
-  <%= select_tag(:q, options_for_select([['2018年10月05日', 20181005],['2018年10月06日', 20181006],])) %>
-  <button class="btn btn-primary btn-sm"><%= submit_tag("Check") %></button>
+<div class="py-2 row">
+  <label class="col-sm-2 col-form-label">日付</label>
+  <div class="col-sm-10">
+    <%= select_tag(:q, options_for_select({'2018年10月05日' => 20181005, '2018年10月06日' => 20181006}), {:class => "form-control"}) %>
+  </div>
+</div>
+
+<div class="py-2 row">
+  <label class="col-sm-2 col-form-label">メーカー</label>
+  <div class="col-sm-10">
+    <%= select_tag(:m, options_from_collection_for_select(@makers, :maker, :maker, "ROLAND"), {:class => "form-control"}) %>
+  </div>
+</div>
+
+<div class="py-2 row">
+  <label class="col-sm-2 col-form-label">価格帯</label>
+  <div class="col-sm-10">
+    <%= select_tag(:p, options_for_select([['¥0 〜 ¥10,000', 10000],['¥10,000 〜 ¥50,000', 50000],
+        ['¥100,000 〜 ¥200,000', 200000],['¥200,000 〜 ¥400,000', 400000],['¥400,000 〜 ¥600,000', 600000],
+        ['¥600,000 〜', 10000000],['ALL', "ALL"]]), {:class => "form-control"}) %>
+  </div>
+</div>
+
+
+<div class="row py-2">
+  <label class="col-sm-2 col-form-label">状態</label>
+  <div class="col-sm-10">
+    <%= radio_button_tag(:t, value = "ALL", checked = true, options = {}) %>
+    <%= label_tag :t, 'すべて' %>
+    <%= radio_button_tag(:t, value = "NEW", checked = false, options = {}) %>
+    <%= label_tag :t, '新品' %>
+    <%= radio_button_tag(:t, value = "OLD", checked = false, options = {}) %>
+    <%= label_tag :t, '中古' %>
+  </div>
+</div>
+
+
+
+<div class="py-2 row">
+  <label class="col-sm-2 col-form-label">並び順</label>
+</div>
+
+<div class="py-3">
+  <button class="btn btn-info" type="submit" >Check</button>
+</div>
 
 <% end %>

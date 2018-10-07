@@ -1,5 +1,11 @@
 <%= will_paginate %>
 
+<div class="text-black text-center py-2">
+  <h5>検索結果 <%= @digitalitems.count %>件</h5>
+</div>
+<div class="text-black text-center py-1">
+  <h6>検索条件(日付：<%= @checkdate %> メーカー：<%= @checkmaker %>　価格帯：<%= @rangeprice %>)</h6>
+</div>
 <table class="table">
   <thead>
     <tr><span class="index">
