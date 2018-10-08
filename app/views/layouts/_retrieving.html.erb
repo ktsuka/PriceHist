@@ -18,7 +18,7 @@
   <label class="col-sm-2 col-form-label">価格帯</label>
   <div class="col-sm-10">
     <%= select_tag(:p, options_for_select([['〜 ¥100,000', 100000],['¥100,000 〜 ¥300,000', 300000],
-        ['¥300,000 〜 ¥500,000', 500000],['¥500,000 〜 ', 500001],['ALL', "ALL"]]), {:class => "form-control"}) %>
+        ['¥300,000 〜 ¥500,000', 500000],['¥500,000 〜 ', 500001],['すべての価格帯', "ALL"]]), {:class => "form-control"}) %>
   </div>
 </div>
 
@@ -45,8 +45,8 @@
 <div class="row py-1">
   <label class="col-sm-2 col-form-label">並び順</label>
   <div class="col-sm-10">
-    <label><%= check_box_tag(:cbm, options = {:class => "form-control"}) %> メーカー</label>
-    <label><%= check_box_tag(:cbp, options = {:class => "form-control"}) %> 価格</label>
+    <label><%= check_box_tag(:cbm, "1", checked = false, options = {:class => "form-control"}) %> <%= label_tag :cbm, "メーカー" %></label>
+    <label><%= check_box_tag(:cbp, "1", checked = true, options = {:class => "form-control"}) %> <%= label_tag :cbp, "価格" %></label>
   </div>
 </div>
 
