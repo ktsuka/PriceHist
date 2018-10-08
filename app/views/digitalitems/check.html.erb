@@ -1,31 +1,35 @@
 <div class="pagination pagination-sm">
-  <%= will_paginate @digitalitems, renderer: WillPaginate::ActionView::BootstrapLinkRenderer,:inner_window => 1 %>
+  <p class="text-secondary">
+    <%= will_paginate @digitalitems, renderer: WillPaginate::ActionView::BootstrapLinkRenderer,:inner_window => 1 %>
+  </p>
 </div>
 
 <div class="text-black text-center py-2">
-  <h5>検索結果 <%= @digitalitems.count %>件</h5>
+  <h5 class="text-secondary">検索結果 <%= @digitalitems.count %>件</h5>
 </div>
 <div class="text-black text-center py-1">
-  <h6>検索条件(日付：<%= @checkdate %> メーカー：<%= @checkmaker %>　価格帯：<%= @rangeprice %>)</h6>
+  <h6 class="text-secondary">日付：<%= @checkdate %> メーカー：<%= @checkmaker %>　価格帯：<%= @rangeprice %></h6>
 </div>
-<table class="table table-hover table-sm">
-  <thead class="table-light">
-    <tr><span class="index">
-      <th>Maker</th>
-      <th>Name</th>
-      <th>Price</th>
-    </span></tr>
-  </thead>
-  <% @digitalitems.each do |item| %>
-  <tbody>
-    <tr><span class="index">
-      <td><%= item.maker %></td>
-      <td><%= link_to item.name, digitalitem_path(item), :target=>["_blank"] %></td>
-      <td><%= "¥" + item.price.to_s(:delimited) %></td>
-    </span></tr>
-  </tbody>
-  <% end %>
-</table>
+<div class="table-responsive">
+  <table class="table table-hover table-sm ">
+    <thead class="table-light text-info">
+      <tr>
+        <th>メーカー</th>
+        <th>モデル</th>
+        <th>プライス</th>
+      </tr>
+    </thead>
+    <% @digitalitems.each do |item| %>
+    <tbody>
+      <tr>
+        <td class="text-secondary"><%= item.maker %></td>
+        <td><%= link_to item.name, digitalitem_path(item), :target=>["_blank"] %></td>
+        <td class="text-secondary"><%= "¥" + item.price.to_s(:delimited) %></td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+</div>
 
 <div class="pagination pagination-sm">
   <%= will_paginate @digitalitems, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, :inner_window => 1 %>
