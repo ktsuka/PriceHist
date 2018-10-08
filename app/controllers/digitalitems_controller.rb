@@ -12,7 +12,7 @@ class DigitalitemsController < ApplicationController
     @checkdate=params[:q].to_date.strftime('%Y/%m/%d')
     @checkmaker=params[:m]
     @rangeprice=params[:p]
-    @digitalitems=DigitalItem.paginate(page: params[:page], per_page: 40).check(params[:q], params[:m], params[:p]).order(:maker)
+    @digitalitems=DigitalItem.paginate(page: params[:page], per_page: 40).check(params[:q], params[:m], params[:p], params[:ty], params[:key])
 
   end
 

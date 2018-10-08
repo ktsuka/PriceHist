@@ -1,4 +1,6 @@
-<%= will_paginate %>
+<div class="pagination pagination-sm">
+  <%= will_paginate @digitalitems, renderer: WillPaginate::ActionView::BootstrapLinkRenderer,:inner_window => 1 %>
+</div>
 
 <div class="text-black text-center py-2">
   <h5>検索結果 <%= @digitalitems.count %>件</h5>
@@ -6,8 +8,8 @@
 <div class="text-black text-center py-1">
   <h6>検索条件(日付：<%= @checkdate %> メーカー：<%= @checkmaker %>　価格帯：<%= @rangeprice %>)</h6>
 </div>
-<table class="table">
-  <thead>
+<table class="table table-hover table-sm">
+  <thead class="table-light">
     <tr><span class="index">
       <th>Maker</th>
       <th>Name</th>
@@ -25,4 +27,6 @@
   <% end %>
 </table>
 
-<%= will_paginate %>
+<div class="pagination pagination-sm">
+  <%= will_paginate @digitalitems, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, :inner_window => 1 %>
+</div>

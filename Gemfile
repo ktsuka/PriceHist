@@ -68,4 +68,4 @@ gem 'popper_js', '~> 1.14.3'
 gem 'mysql2'
 
 gem 'will_paginate'
-gem 'will_paginate-bootstrap'
+gem 'will_paginate-bootstrap4'
