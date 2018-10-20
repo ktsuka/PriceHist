@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_06_095953) do
+ActiveRecord::Schema.define(version: 2018_10_12_145649) do
 
   create_table "digital_items", primary_key: "itemid", id: :string, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "store"
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(version: 2018_10_06_095953) do
     t.string "istatus"
     t.string "itype"
     t.text "memo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "summary_items", primary_key: ["itemdate", "category"], options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "itemdate", null: false
+    t.string "category", null: false
+    t.integer "count"
+    t.integer "totalprice"
+    t.integer "newitem"
+    t.integer "olditem"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

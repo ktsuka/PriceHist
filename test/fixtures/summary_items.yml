@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  itemdate: MyString
+  category: MyString
+  count: 1
+  totalprice: 1
+  newitem: 1
+  olditem: 1
+
+two:
+  itemdate: MyString
+  category: MyString
+  count: 1
+  totalprice: 1
+  newitem: 1
+  olditem: 1

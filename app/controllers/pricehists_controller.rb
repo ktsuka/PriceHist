@@ -1,11 +1,34 @@
 class PricehistsController < ApplicationController
 
   def index
-    @makers=DigitalItem.select(:maker).distinct.order(:maker)
+    if params[:item_category] == nil then
+      @Summary=SummaryItem.group(:itemdate).sum(:count)
+      @Title="Total Summary"
+    end
+
+    if params[:item_category] == "dg" then
+      @Summary=SummaryItem.where(category: params[:item_category]).group(:itemdate).sum(:count)
+      @Title="Digital Summary"
+    end
+
+    if params[:item_category] == "ef" then
+      @Summary=SummaryItem.where(category: params[:item_category]).group(:itemdate).sum(:count)
+      @Title="Effector Summary"
+    end
+
+    if params[:item_category] == "am" then
+      @Summary=SummaryItem.where(category: params[:item_category]).group(:itemdate).sum(:count)
+      @Title="Amp Summary"
+    end
+
   end
 
   def show
     @item=DigitalItem.find(params[:id])
+  end
+
+  def find
+    @makers=DigitalItem.select(:maker).distinct.order(:maker)
   end
 
   def check

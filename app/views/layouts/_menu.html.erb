@@ -1,0 +1,25 @@
+<div class="py-2 row">
+  <div class="col-12">
+    <nav class="navbar navbar-expand-sm navbar-primary" style="background:#9BF; height:40px;">
+      <ul class="navbar-nav text-center">
+        <li class="nav-item"><%= link_to "Digital", pricehists_path(:item_category => "dg"), {:class => "nav-link text-secondary"} %></li>
+        <li class="nav-item"><%= link_to "Effector", pricehists_path(:item_category => "ef"), {:class => "nav-link text-secondary"} %></li>
+        <li class="nav-item"><%= link_to "Amp", pricehists_path(:item_category => "am"), {:class => "nav-link text-secondary"} %></li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><%= link_to "Summary",pricehists_path, {:class => "nav-link text-secondary"} %></li>
+        <li class="nav-item"><%= link_to "Find",find_pricehists_path, {:class => "nav-link text-secondary"} %></li>
+        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            クリックしてね（buttonタグ)
+        </button>
+      </ul>
+    </nav>
+    <div class="row py-3">
+    <div class="collapse" id="collapseExample">
+        <div class="border p-3">
+            表示されました！
+        </div>
+    </div>
+    </div>
+  </div>
+</div>

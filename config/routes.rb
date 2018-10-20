@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root 'pricehists#index'
   resources :pricehists do
     collection {get "check"}
+    collection {get "find"}
   end
 end

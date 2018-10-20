@@ -1,7 +1,7 @@
 <%= form_tag(:check_pricehists, method: "get") do %>
 
 <div class="py-2 row">
-  <div class="col-2"></div>
+  <div class="col-3" style="background: #f5fffa"></div>
   <label class="col-2 col-form-label">日付</label>
   <div class="col-4">
     <%= select_tag(:q, options_for_select({'2018年10月05日' => 20181005, '2018年10月06日' => 20181006}), {:class => "form-control"}) %>
@@ -9,11 +9,7 @@
 </div>
 
 <div class="py-2 row">
-  <div class="col-2">
-    <%= link_to pricehists_path, class: 'btn btn-light', data: {toggle: :tab} do %>
-      2018-10-05 <%= content_tag :span, @Summary.count, class: 'badge badge-danger' %>
-   <% end %>
-  </div>
+  <div class="col-3"></div>
   <label class="col-2 col-form-label">メーカー</label>
   <div class="col-4">
     <%= select_tag(:m, options_from_collection_for_select(@makers, :maker, :maker, "ROLAND"), {:class => "form-control"}) %>
@@ -21,7 +17,7 @@
 </div>
 
 <div class="py-2 row">
-  <div class="col-2"></div>
+  <div class="col-3"></div>
   <label class="col-2 col-form-label">価格帯</label>
   <div class="col-4">
     <%= select_tag(:p, options_for_select([['〜 ¥100,000', 100000],['¥100,000 〜 ¥300,000', 300000],
@@ -31,7 +27,7 @@
 
 
 <div class="row py-2">
-  <div class="col-2"></div>
+  <div class="col-3"></div>
   <label class="col-2 col-form-label">新品・中古</label>
   <div class="col-4">
     <%= radio_button_tag(:ty, value = "all", checked = true, options = {}) %>
@@ -44,7 +40,7 @@
 </div>
 
 <div class="row py-1">
-  <div class="col-2"></div>
+  <div class="col-3"></div>
   <label class="col-2 col-form-label">品名キーワード</label>
   <div class="col-4">
     <%= search_field_tag(:key, "", options = {:class => "form-control"}) %>
@@ -52,7 +48,7 @@
 </div>
 
 <div class="row">
-  <div class="col-2"></div>
+  <div class="col-3"></div>
   <label class="col-2 col-form-label">並び順</label>
   <div class="col-4">
     <%= check_box_tag(:cbm, "1", checked = false, options = {}) %>
@@ -63,7 +59,7 @@
 </div>
 
 <div class="row">
-  <div class="col-2"></div>
+  <div class="col-3"></div>
   <div class="py-3 col-6">
     <button class="btn btn-info btn-block" type="submit" >Check</button>
   </div>

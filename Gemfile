@@ -69,3 +69,5 @@ gem 'mysql2'
 
 gem 'will_paginate'
 gem 'will_paginate-bootstrap4'
+
+gem "simple_calendar", "~> 2.0"

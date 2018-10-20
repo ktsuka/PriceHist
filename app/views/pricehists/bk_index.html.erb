@@ -1,47 +1,29 @@
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
-  </li>
-</ul>
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">111</div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">222</div>
-  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">333</div>
-</div>
-
-
-<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
-  </li>
-</ul>
-<div class="tab-content" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">aaa</div>
-  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">bbb</div>
-  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">ccc</div>
-</div>
-
-<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    ドロップダウン
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="#">メニュー1</a></li>
-    <li><a href="#">メニュー2</a></li>
-    <li><a href="#">メニュー3</a></li>
-    <li><a href="#">メニュー4</a></li>
+<div class="col-10 row">
+  <div class="col-3"></div>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link text-secondary active" id="digital-tab" data-toggle="tab" href="#Digital" role="tab" aria-controls="home" aria-selected="true">Digital</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-secondary" id="guitar-tab" data-toggle="tab" href="#Guitar" role="tab" aria-controls="profile" aria-selected="false">Guitar</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-secondary" id="effector-tab" data-toggle="tab" href="#Effector" role="tab" aria-controls="contact" aria-selected="false">Effector</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-secondary" id="effector-tab" data-toggle="tab" href="#..." role="tab" aria-controls="contact" aria-selected="false">...</a>
+    </li>
   </ul>
+</div>
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active py-2" id="digital" role="tabpanel" aria-labelledby="digital-tab">
+    <%= render 'layouts/retrieving' %>
+  </div>
+  <div class="tab-pane fade" id="guitar" role="tabpanel" aria-labelledby="guitar-tab">
+    <%= render 'layouts/retrieving' %>
+  </div>
+  <div class="tab-pane fade" id="effector" role="tabpanel" aria-labelledby="effector-tab">
+    <%= render 'layouts/retrieving' %>
+  </div>
 </div>
