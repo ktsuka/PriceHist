@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :pricehists do
     collection {get "check"}
     collection {get "find"}
+    collection {get "detail"}
   end
 end

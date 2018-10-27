@@ -39,6 +39,11 @@ class PricehistsController < ApplicationController
 
   end
 
+  def detail
+    @checkdate=params[:item_date].gsub("-","/")
+    @makercount=DigitalItem.makercount(params[:item_date].delete("-"))
+  end
+
   private
     def calc(price)
       if price.to_i == 100000 then

@@ -1,0 +1,12 @@
+<h4 class="text-center text-secondary my-3">
+  <%= @checkdate %> メーカ別件数
+</h4>
+<div class="col-12 d-flex flex-wrap justify-content-between">
+  <% @makercount.each do |maker, count| %>
+    <% if count > 0 %>
+      <%= link_to detail_pricehists_path, class: 'btn btn-primary my-1 py-2' do %>
+        <%= maker %> <%= content_tag :span, count, class: 'badge badge-danger' %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

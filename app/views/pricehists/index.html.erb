@@ -1,11 +1,10 @@
-<div class="my-3 text-center text-secondary"><h4><%= @Title %></h4></div>
-  <%= month_calendar do |date| %>
-    <% @Summary.each do |itemsdate, itemscount| %>
-      <% if date == itemsdate.to_date %>
-        <%= link_to check_pricehists_path, class: 'btn btn-info' do %>
-          <%= itemsdate[4,2] + "/" + itemsdate[6,2] %> <%= content_tag :span, itemscount, class: 'badge badge-danger' %>
-        <% end %>
+<h4 class="text-center text-secondary"><%= @Title %></h4>
+<%= month_calendar do |date| %>
+  <% @Summary.each do |itemsdate, itemscount| %>
+    <% if date == itemsdate.to_date %>
+      <%= link_to detail_pricehists_path(:item_date => itemsdate.to_date), class: 'btn btn-info' do %>
+        <%= itemsdate[4,2] + "/" + itemsdate[6,2] %> <%= content_tag :span, itemscount, class: 'badge badge-danger' %>
       <% end %>
     <% end %>
   <% end %>
-</div>
+<% end %>

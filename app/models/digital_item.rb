@@ -10,4 +10,8 @@ class DigitalItem < ApplicationRecord
 
   end
 
+  def self.makercount(date)
+    rel = where("itemid LIKE ?","#{date}%").group(:maker).order("count_maker DESC").count(:maker)
+  end
+
 end
